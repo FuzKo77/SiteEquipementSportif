@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ÉcoSport - Vente d'équipement sportif recyclable et éco-responsable">
+    <title>ÉcoSport - Équipement Sportif Recyclable</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="eco-mode.css" id="eco-mode-stylesheet" disabled>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ÉcoSport</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="#produits">Produits</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cv.html">Équipe</a></li>
+                <li><a href="plan-du-site.html">Plan du site</a></li>
+            </ul>
+            <button id="eco-mode-toggle" class="eco-toggle" aria-label="Activer le mode éco-responsable">🌱</button>
+            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Sport & Écologie, unis pour la planète</h2>
+                <p>Découvrez notre sélection d'équipements sportifs recyclables et éco-responsables</p>
+                <a href="#produits" class="btn-primary">Découvrir nos produits</a>
+            </div>
+        </section>
+
+        <section id="produits" class="produits">
+            <h2>Nos Produits</h2>
+            <div class="produits-grid">
+                <article class="produit-card">
+                    <img src="../img/produit1.svg" alt="Vêtements sportifs recyclés" loading="lazy">
+                    <h3>Vêtements Sportifs Recyclés</h3>
+                    <p>Collection de vêtements de sport fabriqués à partir de matériaux recyclés (bouteilles plastiques, textiles usagés).</p>
+                    <span class="prix">À partir de 29,90€</span>
+                    <button class="btn-secondary">Voir le produit</button>
+                </article>
+                <article class="produit-card">
+                    <img src="../img/produit2.svg" alt="Chaussures de sport écologiques" loading="lazy">
+                    <h3>Chaussures Écologiques</h3>
+                    <p>Chaussures de sport conçues avec des matériaux durables et recyclables, pour un impact environnemental réduit.</p>
+                    <span class="prix">À partir de 79,90€</span>
+                    <button class="btn-secondary">Voir le produit</button>
+                </article>
+                <article class="produit-card">
+                    <img src="../img/produit3.svg" alt="Accessoires sportifs recyclables" loading="lazy">
+                    <h3>Accessoires Recyclables</h3>
+                    <p>Gourdes, sacs à dos et autres accessoires sportifs fabriqués à partir de matériaux recyclés et recyclables.</p>
+                    <span class="prix">À partir de 19,90€</span>
+                    <button class="btn-secondary">Voir le produit</button>
+                </article>
+                <article class="produit-card">
+                    <img src="../img/produit4.svg" alt="Équipement de fitness durable" loading="lazy">
+                    <h3>Équipement Fitness Durable</h3>
+                    <p>Matériel de fitness conçu pour durer, fabriqué avec des matériaux recyclables et respectueux de l'environnement.</p>
+                    <span class="prix">À partir de 49,90€</span>
+                    <button class="btn-secondary">Voir le produit</button>
+                </article>
+            </div>
+        </section>
+
+        <section id="valeurs" class="valeurs">
+            <h2>Nos Valeurs</h2>
+            <div class="valeurs-grid">
+                <div class="valeur-item">
+                    <div class="valeur-icon">♻️</div>
+                    <h3>Recyclage</h3>
+                    <p>100% de nos produits sont recyclables ou fabriqués à partir de matériaux recyclés</p>
+                </div>
+                <div class="valeur-item">
+                    <div class="valeur-icon">🌍</div>
+                    <h3>Écologie</h3>
+                    <p>Engagement pour la protection de l'environnement et la réduction de notre empreinte carbone</p>
+                </div>
+                <div class="valeur-item">
+                    <div class="valeur-icon">🏃</div>
+                    <h3>Performance</h3>
+                    <p>Des équipements de qualité qui allient performance sportive et respect de l'environnement</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ÉcoSport</h3>
+                <p>Votre partenaire pour un sport éco-responsable</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="plan-du-site.html">Plan du site</a></li>
+                    <li><a href="cv.html">Notre équipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <p>Sur les réseaux sociaux pour nos dernières actualités</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ÉcoSport. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+

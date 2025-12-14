@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contactez ÉcoSport pour toute question sur nos équipements sportifs recyclables">
+    <title>Contact - ÉcoSport</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="eco-mode.css" id="eco-mode-stylesheet" disabled>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>ÉcoSport</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="index.html#produits">Produits</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="cv.html">Équipe</a></li>
+                <li><a href="plan-du-site.html">Plan du site</a></li>
+            </ul>
+            <button id="eco-mode-toggle" class="eco-toggle" aria-label="Activer le mode éco-responsable">🌱</button>
+            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1>Contactez-nous</h1>
+            <p class="contact-intro">Une question ? Un renseignement ? N'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
+            
+            <form id="contact-form" class="contact-form" method="post" action="#" novalidate>
+                <div class="form-group">
+                    <label for="nom">Nom <span class="required">*</span></label>
+                    <input type="text" id="nom" name="nom" required aria-required="true">
+                    <span class="error-message" id="nom-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="prenom">Prénom <span class="required">*</span></label>
+                    <input type="text" id="prenom" name="prenom" required aria-required="true">
+                    <span class="error-message" id="prenom-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                    <span class="error-message" id="email-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="telephone">Téléphone</label>
+                    <input type="tel" id="telephone" name="telephone">
+                    <span class="error-message" id="telephone-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="sujet">Sujet <span class="required">*</span></label>
+                    <select id="sujet" name="sujet" required aria-required="true">
+                        <option value="">Sélectionnez un sujet</option>
+                        <option value="question">Question générale</option>
+                        <option value="commande">Commande</option>
+                        <option value="retour">Retour produit</option>
+                        <option value="partenariat">Partenariat</option>
+                        <option value="autre">Autre</option>
+                    </select>
+                    <span class="error-message" id="sujet-error"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                    <span class="error-message" id="message-error"></span>
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="rgpd" name="rgpd" required aria-required="true">
+                    <label for="rgpd">J'accepte que mes données soient utilisées pour répondre à ma demande <span class="required">*</span></label>
+                    <span class="error-message" id="rgpd-error"></span>
+                </div>
+
+                <button type="submit" class="btn-primary">Envoyer</button>
+                <div id="form-success" class="form-success" role="alert" aria-live="polite"></div>
+            </form>
+
+            <div class="contact-info">
+                <h2>Informations de contact</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3>Adresse</h3>
+                        <p>123 Rue de l'Écologie<br>75001 Paris, France</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Téléphone</h3>
+                        <p>+33 1 23 45 67 89</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Email</h3>
+                        <p>contact@ecosport.fr</p>
+                    </div>
+                    <div class="info-item">
+                        <h3>Horaires</h3>
+                        <p>Lundi - Vendredi : 9h - 18h<br>Samedi : 10h - 16h</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>ÉcoSport</h3>
+                <p>Votre partenaire pour un sport éco-responsable</p>
+            </div>
+            <div class="footer-section">
+                <h3>Liens utiles</h3>
+                <ul>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="mentions-legales.html">Mentions légales</a></li>
+                    <li><a href="plan-du-site.html">Plan du site</a></li>
+                    <li><a href="cv.html">Notre équipe</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Suivez-nous</h3>
+                <p>Sur les réseaux sociaux pour nos dernières actualités</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 ÉcoSport. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
+

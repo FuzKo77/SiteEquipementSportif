@@ -1,0 +1,68 @@
+/* ============================================
+   Mode Éco-Responsable (RGESN)
+   ============================================ */
+
+/* Réduction des animations et transitions */
+* {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+}
+
+/* Désactivation des effets visuels gourmands */
+.hero {
+    background: var(--color-primary) !important;
+    background-image: none !important;
+}
+
+.produit-card:hover,
+.btn-primary:hover,
+.btn-secondary:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Réduction de la complexité visuelle */
+.produit-card {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Optimisation des couleurs pour économiser l'énergie sur les écrans OLED */
+:root {
+    --color-primary: #1B5E20; /* Vert plus foncé */
+    --color-secondary: #E65100; /* Orange plus foncé */
+}
+
+/* Réduction des images décoratives */
+.valeur-icon {
+    font-size: 2rem !important;
+}
+
+/* Simplification des bordures */
+.produit-card,
+.cv-container,
+.contact-form {
+    border: 1px solid var(--color-border) !important;
+    border-radius: 2px !important;
+}
+
+/* Désactivation des gradients */
+.hero {
+    background: var(--color-primary) !important;
+}
+
+/* Message d'information */
+body::before {
+    content: "🌱 Mode éco-responsable activé - Réduction de la consommation d'énergie";
+    display: block;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    padding: var(--spacing-sm);
+    text-align: center;
+    font-weight: bold;
+    position: sticky;
+    top: 60px;
+    z-index: 999;
+}
+

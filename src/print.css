@@ -1,0 +1,134 @@
+/* ============================================
+   Styles pour l'impression des CVs
+   ============================================ */
+
+@media print {
+    /* Masquer les éléments non nécessaires à l'impression */
+    header,
+    footer,
+    .menu-toggle,
+    .eco-toggle,
+    .print-notice,
+    .nav-menu {
+        display: none !important;
+    }
+
+    /* Configuration de la page */
+    @page {
+        size: A4;
+        margin: 2cm;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+
+    /* Styles pour les CVs */
+    .cv-container {
+        page-break-inside: avoid;
+        border: 1px solid #000;
+        padding: 1cm;
+        margin-bottom: 1.5cm;
+        box-shadow: none;
+        background: #fff;
+    }
+
+    .cv-header {
+        display: flex;
+        gap: 1cm;
+        margin-bottom: 1cm;
+        padding-bottom: 0.5cm;
+        border-bottom: 2px solid #000;
+        page-break-inside: avoid;
+    }
+
+    .cv-photo img {
+        width: 100px;
+        height: 100px;
+        border: 2px solid #000;
+        border-radius: 50%;
+    }
+
+    .cv-info h2 {
+        color: #000;
+        font-size: 18pt;
+        margin-bottom: 0.25cm;
+    }
+
+    .cv-title {
+        font-size: 14pt;
+        color: #333;
+        font-weight: bold;
+        margin-bottom: 0.5cm;
+    }
+
+    .cv-contact {
+        font-size: 10pt;
+        color: #333;
+    }
+
+    .cv-content {
+        display: block;
+        margin-top: 1cm;
+    }
+
+    .cv-section {
+        margin-bottom: 0.75cm;
+        page-break-inside: avoid;
+    }
+
+    .cv-section h3 {
+        color: #000;
+        font-size: 14pt;
+        margin-bottom: 0.5cm;
+        border-bottom: 1px solid #000;
+        padding-bottom: 0.25cm;
+    }
+
+    .cv-section ul {
+        margin-left: 1cm;
+    }
+
+    .cv-section ul li {
+        margin-bottom: 0.25cm;
+        font-size: 11pt;
+    }
+
+    /* Éviter les coupures de page dans les sections importantes */
+    .cv-section,
+    .cv-header {
+        page-break-inside: avoid;
+    }
+
+    /* Forcer une nouvelle page pour chaque CV */
+    .cv-container + .cv-container {
+        page-break-before: always;
+    }
+
+    /* Optimisation des liens */
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+
+    /* Masquer les éléments interactifs */
+    button,
+    .btn-primary,
+    .btn-secondary {
+        display: none !important;
+    }
+
+    /* Assurer un bon contraste pour l'impression */
+    * {
+        color: #000 !important;
+        background: #fff !important;
+    }
+
+    .cv-section h3 {
+        color: #000 !important;
+    }
+}
+
