@@ -1,6 +1,4 @@
-/* ============================================
-   Mode Éco-Responsable (RGESN)
-   ============================================ */
+/* Mode Éco-Responsable (RGESN) */
 
 /* Réduction des animations et transitions */
 * {
@@ -12,7 +10,7 @@
 
 /* Désactivation des effets visuels gourmands */
 .hero {
-    background: var(--color-primary) !important;
+    background: #2E7D32 !important;
     background-image: none !important;
 }
 
@@ -28,12 +26,6 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Optimisation des couleurs pour économiser l'énergie sur les écrans OLED */
-:root {
-    --color-primary: #1B5E20; /* Vert plus foncé */
-    --color-secondary: #E65100; /* Orange plus foncé */
-}
-
 /* Réduction des images décoratives */
 .valeur-icon {
     font-size: 2rem !important;
@@ -43,26 +35,20 @@
 .produit-card,
 .cv-container,
 .contact-form {
-    border: 1px solid var(--color-border) !important;
+    border: 1px solid #E0E0E0 !important;
     border-radius: 2px !important;
-}
-
-/* Désactivation des gradients */
-.hero {
-    background: var(--color-primary) !important;
 }
 
 /* Message d'information */
 body::before {
     content: "🌱 Mode éco-responsable activé - Réduction de la consommation d'énergie";
     display: block;
-    background-color: var(--color-light);
-    color: var(--color-dark);
-    padding: var(--spacing-sm);
+    background-color: #81C784;
+    color: #1B5E20;
+    padding: 1rem;
     text-align: center;
     font-weight: bold;
     position: sticky;
     top: 60px;
     z-index: 999;
 }
-

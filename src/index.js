@@ -146,6 +146,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             
             if (isValid) {
+                // Récupérer les données du formulaire
+                const formData = {
+                    nom: nom.value.trim(),
+                    prenom: prenom.value.trim(),
+                    email: email.value.trim(),
+                    telephone: telephone.value.trim(),
+                    sujet: sujet.value,
+                    message: message.value.trim(),
+                    date: new Date().toISOString()
+                };
+                
+                // Stocker les données dans localStorage
+                let storedMessages = [];
+                const existingMessages = localStorage.getItem('contactMessages');
+                if (existingMessages) {
+                    storedMessages = JSON.parse(existingMessages);
+                }
+                storedMessages.push(formData);
+                localStorage.setItem('contactMessages', JSON.stringify(storedMessages));
+                
                 // Afficher le message de succès
                 const successMessage = document.getElementById('form-success');
                 successMessage.textContent = 'Merci ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.';
@@ -169,6 +189,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+// ============================================
+// Fonction pour afficher les messages stockés (pour debug)
+// ============================================
+function afficherMessagesStockes() {
+    const messages = localStorage.getItem('contactMessages');
+    if (messages) {
+        const messagesArray = JSON.parse(messages);
+        console.log('Messages stockés dans localStorage:', messagesArray);
+        return messagesArray;
+    } else {
+        console.log('Aucun message stocké');
+        return [];
+    }
+}
+
+// Fonction pour supprimer tous les messages (pour debug)
+function supprimerTousLesMessages() {
+    localStorage.removeItem('contactMessages');
+    console.log('Tous les messages ont été supprimés');
+}
+
+// Pour tester dans la console du navigateur :
+// - afficherMessagesStockes() : affiche tous les messages
+// - supprimerTousLesMessages() : supprime tous les messages
 
 // ============================================
 // Smooth scroll pour les ancres

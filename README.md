@@ -1,4 +1,4 @@
-# ÉcoSport - Site de vente d'équipement sportif recyclable
+# EcoStrive - Site de vente d'équipement sportif recyclable
 
 ## Description
 
