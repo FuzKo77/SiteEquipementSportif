@@ -1,240 +1,127 @@
-// ============================================
-// Gestion du mode éco-responsable (RGESN)
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const ecoModeToggle = document.getElementById('eco-mode-toggle');
-    const ecoModeStylesheet = document.getElementById('eco-mode-stylesheet');
-    
-    // Vérifier si le mode éco est déjà activé (localStorage)
-    const isEcoModeActive = localStorage.getItem('ecoMode') === 'true';
-    
-    if (isEcoModeActive) {
-        activateEcoMode();
+// Script simple : tout est déclenché après le chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    // ----- Mode éco -----
+    const ecoBtn = document.getElementById('bouton-mode-eco');
+    const ecoCss = document.getElementById('style-mode-eco');
+    const ecoOn = localStorage.getItem('ecoMode') === 'true';
+    if (ecoOn) {
+        enableEco();
     }
-    
-    if (ecoModeToggle) {
-        ecoModeToggle.addEventListener('click', function() {
-            toggleEcoMode();
+    if (ecoBtn && ecoCss) {
+        ecoBtn.addEventListener('click', () => {
+            if (ecoCss.disabled) {
+                enableEco();
+            } else {
+                disableEco();
+            }
         });
     }
-    
-    function toggleEcoMode() {
-        if (ecoModeStylesheet.disabled) {
-            activateEcoMode();
-        } else {
-            deactivateEcoMode();
-        }
+    function enableEco() {
+        ecoCss.disabled = false;
+        ecoBtn.classList.add('active');
+        localStorage.setItem('ecoMode', 'true');
     }
-    
-    function activateEcoMode() {
-        if (ecoModeStylesheet) {
-            ecoModeStylesheet.disabled = false;
-            ecoModeToggle.classList.add('active');
-            localStorage.setItem('ecoMode', 'true');
-        }
+    function disableEco() {
+        ecoCss.disabled = true;
+        ecoBtn.classList.remove('active');
+        localStorage.setItem('ecoMode', 'false');
     }
-    
-    function deactivateEcoMode() {
-        if (ecoModeStylesheet) {
-            ecoModeStylesheet.disabled = true;
-            ecoModeToggle.classList.remove('active');
-            localStorage.setItem('ecoMode', 'false');
-        }
-    }
-});
 
-// ============================================
-// Menu mobile
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            const isExpanded = navMenu.classList.contains('active');
-            menuToggle.setAttribute('aria-expanded', isExpanded);
+    // ----- Menu burger -----
+    const menuBtn = document.querySelector('.bouton-menu');
+    const nav = document.querySelector('.menu-principal');
+    if (menuBtn && nav) {
+        menuBtn.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            menuBtn.setAttribute('aria-expanded', nav.classList.contains('active'));
         });
-        
-        // Fermer le menu en cliquant sur un lien
-        const navLinks = navMenu.querySelectorAll('a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                menuToggle.setAttribute('aria-expanded', 'false');
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('active');
+                menuBtn.setAttribute('aria-expanded', 'false');
             });
         });
     }
-});
 
-// ============================================
-// Validation du formulaire de contact
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+    // ----- Formulaire de contact -----
+    const form = document.getElementById('formulaire-contact');
+    if (form) {
+        form.addEventListener('submit', (e) => {
             e.preventDefault();
-            
-            // Réinitialiser les messages d'erreur
-            const errorMessages = document.querySelectorAll('.error-message');
-            errorMessages.forEach(msg => {
-                msg.textContent = '';
-            });
-            
-            let isValid = true;
-            
-            // Validation du nom
+            document.querySelectorAll('.message-erreur').forEach(m => m.textContent = '');
+
             const nom = document.getElementById('nom');
-            if (!nom.value.trim()) {
-                showError('nom-error', 'Le nom est requis');
-                isValid = false;
-            }
-            
-            // Validation du prénom
             const prenom = document.getElementById('prenom');
-            if (!prenom.value.trim()) {
-                showError('prenom-error', 'Le prénom est requis');
-                isValid = false;
-            }
-            
-            // Validation de l'email
             const email = document.getElementById('email');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!email.value.trim()) {
-                showError('email-error', 'L\'email est requis');
-                isValid = false;
-            } else if (!emailRegex.test(email.value)) {
-                showError('email-error', 'Format d\'email invalide');
-                isValid = false;
-            }
-            
-            // Validation du téléphone (optionnel mais format si rempli)
-            const telephone = document.getElementById('telephone');
-            if (telephone.value.trim()) {
-                const phoneRegex = /^[0-9+\s\-()]+$/;
-                if (!phoneRegex.test(telephone.value)) {
-                    showError('telephone-error', 'Format de téléphone invalide');
-                    isValid = false;
-                }
-            }
-            
-            // Validation du sujet
+            const tel = document.getElementById('telephone');
             const sujet = document.getElementById('sujet');
-            if (!sujet.value) {
-                showError('sujet-error', 'Veuillez sélectionner un sujet');
-                isValid = false;
-            }
-            
-            // Validation du message
-            const message = document.getElementById('message');
-            if (!message.value.trim()) {
-                showError('message-error', 'Le message est requis');
-                isValid = false;
-            } else if (message.value.trim().length < 10) {
-                showError('message-error', 'Le message doit contenir au moins 10 caractères');
-                isValid = false;
-            }
-            
-            // Validation RGPD
+            const msg = document.getElementById('message');
             const rgpd = document.getElementById('rgpd');
-            if (!rgpd.checked) {
-                showError('rgpd-error', 'Vous devez accepter l\'utilisation de vos données');
-                isValid = false;
+            let ok = true;
+
+            if (!nom.value.trim()) { showError('nom-erreur', 'Le nom est requis'); ok = false; }
+            if (!prenom.value.trim()) { showError('prenom-erreur', 'Le prénom est requis'); ok = false; }
+
+            const emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email.value.trim()) { showError('email-erreur', 'L\'email est requis'); ok = false; }
+            else if (!emailReg.test(email.value)) { showError('email-erreur', 'Format d\'email invalide'); ok = false; }
+
+            if (tel.value.trim()) {
+                const telReg = /^[0-9+\s\-()]+$/;
+                if (!telReg.test(tel.value)) { showError('telephone-erreur', 'Format de téléphone invalide'); ok = false; }
             }
-            
-            if (isValid) {
-                // Récupérer les données du formulaire
-                const formData = {
-                    nom: nom.value.trim(),
-                    prenom: prenom.value.trim(),
-                    email: email.value.trim(),
-                    telephone: telephone.value.trim(),
-                    sujet: sujet.value,
-                    message: message.value.trim(),
-                    date: new Date().toISOString()
-                };
-                
-                // Stocker les données dans localStorage
-                let storedMessages = [];
-                const existingMessages = localStorage.getItem('contactMessages');
-                if (existingMessages) {
-                    storedMessages = JSON.parse(existingMessages);
-                }
-                storedMessages.push(formData);
-                localStorage.setItem('contactMessages', JSON.stringify(storedMessages));
-                
-                // Afficher le message de succès
-                const successMessage = document.getElementById('form-success');
-                successMessage.textContent = 'Merci ! Votre message a été envoyé avec succès. Nous vous répondrons dans les plus brefs délais.';
-                successMessage.classList.add('show');
-                
-                // Réinitialiser le formulaire
-                contactForm.reset();
-                
-                // Masquer le message après 5 secondes
-                setTimeout(function() {
-                    successMessage.classList.remove('show');
-                }, 5000);
-            }
+
+            if (!sujet.value) { showError('sujet-erreur', 'Veuillez sélectionner un sujet'); ok = false; }
+            if (!msg.value.trim()) { showError('message-erreur', 'Le message est requis'); ok = false; }
+            else if (msg.value.trim().length < 10) { showError('message-erreur', 'Au moins 10 caractères'); ok = false; }
+
+            if (!rgpd.checked) { showError('rgpd-erreur', 'Cochez la case RGPD'); ok = false; }
+
+            if (!ok) return;
+
+            // Sauvegarde simple dans localStorage
+            const data = {
+                nom: nom.value.trim(),
+                prenom: prenom.value.trim(),
+                email: email.value.trim(),
+                telephone: tel.value.trim(),
+                sujet: sujet.value,
+                message: msg.value.trim(),
+                date: new Date().toISOString()
+            };
+            const list = JSON.parse(localStorage.getItem('contactMessages') || '[]');
+            list.push(data);
+            localStorage.setItem('contactMessages', JSON.stringify(list));
+
+            const success = document.getElementById('message-succes');
+            success.textContent = 'Merci ! Message envoyé.';
+            success.classList.add('show');
+            form.reset();
+            setTimeout(() => success.classList.remove('show'), 5000);
         });
     }
-    
-    function showError(errorId, message) {
-        const errorElement = document.getElementById(errorId);
-        if (errorElement) {
-            errorElement.textContent = message;
-        }
+    function showError(id, text) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
     }
-});
 
-// ============================================
-// Fonction pour afficher les messages stockés (pour debug)
-// ============================================
-function afficherMessagesStockes() {
-    const messages = localStorage.getItem('contactMessages');
-    if (messages) {
-        const messagesArray = JSON.parse(messages);
-        console.log('Messages stockés dans localStorage:', messagesArray);
-        return messagesArray;
-    } else {
-        console.log('Aucun message stocké');
-        return [];
-    }
-}
-
-// Fonction pour supprimer tous les messages (pour debug)
-function supprimerTousLesMessages() {
-    localStorage.removeItem('contactMessages');
-    console.log('Tous les messages ont été supprimés');
-}
-
-// Pour tester dans la console du navigateur :
-// - afficherMessagesStockes() : affiche tous les messages
-// - supprimerTousLesMessages() : supprime tous les messages
-
-// ============================================
-// Smooth scroll pour les ancres
-// ============================================
-document.addEventListener('DOMContentLoaded', function() {
-    const links = document.querySelectorAll('a[href^="#"]');
-    
-    links.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && href !== '') {
-                const target = document.querySelector(href);
-                if (target) {
-                    e.preventDefault();
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+    // ----- Smooth scroll -----
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            const href = link.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
+
+    // ----- Impression des CV -----
+    const printBtn = document.getElementById('print-cv');
+    if (printBtn) {
+        printBtn.addEventListener('click', () => window.print());
+    }
 });
 

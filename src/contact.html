@@ -6,23 +6,24 @@
     <meta name="description" content="Contactez EcoStrive pour toute question sur nos équipements sportifs recyclables">
     <title>Contact - EcoStrive</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="eco-mode.css" id="eco-mode-stylesheet" disabled>
+    <link rel="stylesheet" href="eco-mode.css" id="style-mode-eco" disabled>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>EcoStrive</h1>
+                <a href="index.html"><img src="../img/logoSite.png" alt="Logo EcoStrive"></a>
+                <a href="index.html"><h1>EcoStrive</h1></a>
             </div>
-            <ul class="nav-menu">
+            <ul class="menu-principal">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="index.html#produits">Produits</a></li>
                 <li><a href="contact.html" class="active">Contact</a></li>
                 <li><a href="cv.html">Équipe</a></li>
                 <li><a href="plan-du-site.html">Plan du site</a></li>
             </ul>
-            <button id="eco-mode-toggle" class="eco-toggle" aria-label="Activer le mode éco-responsable">🌱</button>
-            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+            <button id="bouton-mode-eco" class="bouton-eco" aria-label="Activer le mode éco-responsable">🌱</button>
+            <button class="bouton-menu" aria-label="Menu mobile" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,33 +32,33 @@
     </header>
 
     <main>
-        <section class="contact-section">
+        <section class="section-contact">
             <h1>Contactez-nous</h1>
-            <p class="contact-intro">Une question ? Un renseignement ? N'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
+            <p class="intro-contact">Une question ? Un renseignement ? N'hésitez pas à nous contacter via le formulaire ci-dessous.</p>
             
-            <form id="contact-form" class="contact-form" method="post" action="#" novalidate>
+            <form id="formulaire-contact" class="formulaire-contact" method="post" action="#" novalidate>
                 <div class="form-group">
                     <label for="nom">Nom <span class="required">*</span></label>
                     <input type="text" id="nom" name="nom" required aria-required="true">
-                    <span class="error-message" id="nom-error"></span>
+                    <span class="message-erreur" id="nom-erreur"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="prenom">Prénom <span class="required">*</span></label>
                     <input type="text" id="prenom" name="prenom" required aria-required="true">
-                    <span class="error-message" id="prenom-error"></span>
+                    <span class="message-erreur" id="prenom-erreur"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email <span class="required">*</span></label>
                     <input type="email" id="email" name="email" required aria-required="true">
-                    <span class="error-message" id="email-error"></span>
+                    <span class="message-erreur" id="email-erreur"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="telephone">Téléphone</label>
                     <input type="tel" id="telephone" name="telephone">
-                    <span class="error-message" id="telephone-error"></span>
+                    <span class="message-erreur" id="telephone-erreur"></span>
                 </div>
 
                 <div class="form-group">
@@ -70,23 +71,23 @@
                         <option value="partenariat">Partenariat</option>
                         <option value="autre">Autre</option>
                     </select>
-                    <span class="error-message" id="sujet-error"></span>
+                    <span class="message-erreur" id="sujet-erreur"></span>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Message <span class="required">*</span></label>
                     <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
-                    <span class="error-message" id="message-error"></span>
+                    <span class="message-erreur" id="message-erreur"></span>
                 </div>
 
                 <div class="form-group checkbox-group">
                     <input type="checkbox" id="rgpd" name="rgpd" required aria-required="true">
                     <label for="rgpd">J'accepte que mes données soient utilisées pour répondre à ma demande <span class="required">*</span></label>
-                    <span class="error-message" id="rgpd-error"></span>
+                    <span class="message-erreur" id="rgpd-erreur"></span>
                 </div>
 
                 <button type="submit" class="btn-primary">Envoyer</button>
-                <div id="form-success" class="form-success" role="alert" aria-live="polite"></div>
+                <div id="message-succes" class="message-succes" role="alert" aria-live="polite"></div>
             </form>
 
             <div class="contact-info">
@@ -131,6 +132,20 @@
             <div class="footer-section">
                 <h3>Suivez-nous</h3>
                 <p>Sur les réseaux sociaux pour nos dernières actualités</p>
+                <div class="liens-sociaux">
+                    <a href="https://www.facebook.com/profile.php?id=61585595369923" aria-label="Facebook" target="_blank">
+                        <img src="../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/ecostrive.off/" aria-label="Instagram" target="_blank">
+                        <img src="../img/logo-instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://x.com/EcoStrive_Off" aria-label="X (Twitter)" target="_blank">
+                        <img src="../img/x.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://www.linkedin.com/company/ecostrive-off/" aria-label="LinkedIn" target="_blank">
+                        <img src="../img/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

@@ -9,12 +9,12 @@
 }
 
 /* Désactivation des effets visuels gourmands */
-.hero {
+.banniere {
     background: #2E7D32 !important;
     background-image: none !important;
 }
 
-.produit-card:hover,
+.carte-produit:hover,
 .btn-primary:hover,
 .btn-secondary:hover {
     transform: none !important;
@@ -22,19 +22,19 @@
 }
 
 /* Réduction de la complexité visuelle */
-.produit-card {
+.carte-produit {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) !important;
 }
 
 /* Réduction des images décoratives */
-.valeur-icon {
+.icone-valeur {
     font-size: 2rem !important;
 }
 
 /* Simplification des bordures */
-.produit-card,
-.cv-container,
-.contact-form {
+.carte-produit,
+.bloc-cv,
+.formulaire-contact {
     border: 1px solid #E0E0E0 !important;
     border-radius: 2px !important;
 }

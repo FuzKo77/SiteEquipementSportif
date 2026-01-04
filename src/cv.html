@@ -6,24 +6,25 @@
     <meta name="description" content="CV des créateurs d'EcoStrive - Équipe">
     <title>Notre Équipe - EcoStrive</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="eco-mode.css" id="eco-mode-stylesheet" disabled">
+    <link rel="stylesheet" href="eco-mode.css" id="style-mode-eco" disabled>
     <link rel="stylesheet" href="print.css" media="print">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>EcoStrive</h1>
+                <a href="index.html"><img src="../img/logoSite.png" alt="Logo EcoStrive"></a>
+                <a href="index.html"><h1>EcoStrive</h1></a>
             </div>
-            <ul class="nav-menu">
+            <ul class="menu-principal">
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="index.html#produits">Produits</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cv.html" class="active">Équipe</a></li>
                 <li><a href="plan-du-site.html">Plan du site</a></li>
             </ul>
-            <button id="eco-mode-toggle" class="eco-toggle" aria-label="Activer le mode éco-responsable">🌱</button>
-            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+            <button id="bouton-mode-eco" class="bouton-eco" aria-label="Activer le mode éco-responsable">🌱</button>
+            <button class="bouton-menu" aria-label="Menu mobile" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -35,43 +36,47 @@
         <section class="team-section">
             <h1>Notre Équipe</h1>
             <p class="team-intro">Découvrez les créateurs d'EcoStrive, passionnés de sport et d'écologie.</p>
+            <div class="print-actions">
+                <button id="print-cv" class="btn-primary">Imprimer les CV</button>
+            </div>
 
-            <article class="cv-container" id="cv-1">
-                <div class="cv-header">
-                    <div class="cv-photo">
-                        <img src="../img/cv-photo1.svg" alt="Photo de Sophie Martin">
+            <article class="bloc-cv" id="cv-1">
+                <div class="entete-cv">
+                    <div class="photo-cv">
+                        <img src="../img/cv-photo1.svg" alt="Photo exemple">
                     </div>
-                    <div class="cv-info">
-                        <h2>Sophie Martin</h2>
-                        <p class="cv-title">Co-fondatrice & Directrice Marketing</p>
-                        <p class="cv-contact">
-                            <span>📧 sophie.martin@ecostrive.fr</span>
-                            <span>📱 +33 6 12 34 56 78</span>
+                    <div class="infos-cv">
+                        <h2>Théo Gobé</h2>
+                        <p class="titre-cv">Co-fondateur de Eco-Strive</p>
+                        <p class="contact-cv">
+                            <span>📧 theogobe7@gmail.com</span>
+                            <span>📱 +33 6 19 71 69 67</span>
                             <span>📍 Paris, France</span>
                         </p>
                     </div>
                 </div>
 
-                <div class="cv-content">
-                    <section class="cv-section">
+                <div class="contenu-cv">
+                    <section class="section-cv">
                         <h3>Profil</h3>
                         <p>Passionnée de sport et d'environnement, j'ai créé EcoStrive avec l'ambition de rendre le sport accessible tout en respectant la planète. Mon expertise en marketing durable et ma connaissance du secteur sportif permettent de développer une offre innovante et éco-responsable.</p>
                     </section>
 
-                    <section class="cv-section">
+
+                    <section class="section-cv">
                         <h3>Formation</h3>
                         <ul>
-                            <li><strong>2015-2018 :</strong> Master en Marketing et Développement Durable - École Supérieure de Commerce, Paris</li>
-                            <li><strong>2013-2015 :</strong> Licence en Économie et Gestion - Université Paris-Sorbonne</li>
-                            <li><strong>2011-2013 :</strong> DUT Techniques de Commercialisation - IUT de Paris</li>
+                            <li><strong>2025 - Aujourd'hui :</strong>1ere année de BUT Informatique - IUT Sénart/Fontainebleau Site de Fontainebleau</li>
+                            <li><strong>2025 :</strong>Baccalauréat générale (spécialité Math et NSI option Math expert) - lycée Saint Aspais, Melun </li>
+                            <li><strong>2022 :</strong> Brevet des collèges mention TB - collège Sainte Jeanne D'Arc, Melun</li>
                         </ul>
                     </section>
 
-                    <section class="cv-section">
+                    <section class="section-cv">
                         <h3>Expérience professionnelle</h3>
                         <ul>
                             <li>
-                                <strong>2020 - Aujourd'hui :</strong> Co-fondatrice et Directrice Marketing - EcoStrive
+                                <strong>2025 - Aujourd'hui :</strong> Co-fondateur - EcoStrive
                                 <ul>
                                     <li>Développement de la stratégie marketing et communication</li>
                                     <li>Gestion des partenariats avec des marques éco-responsables</li>
@@ -79,44 +84,51 @@
                                 </ul>
                             </li>
                             <li>
-                                <strong>2018-2020 :</strong> Responsable Marketing Digital - GreenSport Solutions
+                                <strong>sept-nov 2025 12h/semaine :</strong> Employer Polyvalent McDonald's
                                 <ul>
-                                    <li>Gestion des campagnes digitales</li>
-                                    <li>Développement de la présence en ligne</li>
+                                    <li>connaissance du fonctionnement d'un restaurant McDonald's</li>
+                                    <li>Connaissance de tout les postes</li>
                                 </ul>
                             </li>
                             <li>
-                                <strong>2016-2018 :</strong> Chargée de Communication - Association Sport & Environnement
+                                <strong>Aout 2025 :</strong> Manutentionnaire - Safran
                                 <ul>
-                                    <li>Organisation d'événements éco-sportifs</li>
-                                    <li>Rédaction de contenus éditoriaux</li>
+                                    <li>Gestion des inventaires</li>
+                                    <li>communication avec les outilleurs</li>
+                                    <li>utilisation de logiciels tels que Excel ou PowerPoint</li>
                                 </ul>
                             </li>
                         </ul>
                     </section>
 
-                    <section class="cv-section">
+                    <section class="section-cv">
                         <h3>Compétences</h3>
                         <ul>
-                            <li>Marketing durable et éco-communication</li>
-                            <li>Gestion de projet</li>
-                            <li>Community management</li>
-                            <li>Stratégie digitale</li>
-                            <li>Anglais : Courant (TOEIC 950)</li>
+                            <li>Anglais : <strong>Courant</strong></li>
+                            <li>espagnol : <strong>B2</strong></li>
+                            <li>C89 : Bon niveau</li>
+                            <li>Python : Très bon niveau</li>
+                            <li>Système d'exploitation : Windows et Linux</li>
+                            <li>Base de données : Oracle et StarUML</li> 
                         </ul>
+                    </section>
+                    <section class="section-cv">
+                        <h3>Projets</h3>
+                            <p>Création d’un jeu taquin en C89 dans le cadre d'un projet noté dans ma formation :
+                            https://grond.iut-fbleau.fr/gobe/SAE11_2025_ZIP/src /branch/main/jeu_taquin.zip</p>
                     </section>
                 </div>
             </article>
 
-            <article class="cv-container" id="cv-2">
-                <div class="cv-header">
-                    <div class="cv-photo">
+            <article class="bloc-cv" id="cv-2">
+                <div class="entete-cv">
+                    <div class="photo-cv">
                         <img src="../img/cv-photo2.svg" alt="Photo de Thomas Dubois">
                     </div>
-                    <div class="cv-info">
+                    <div class="infos-cv">
                         <h2>Thomas Dubois</h2>
-                        <p class="cv-title">Co-fondateur & Directeur Technique</p>
-                        <p class="cv-contact">
+                        <p class="titre-cv">Co-fondateur & Directeur Technique</p>
+                        <p class="contact-cv">
                             <span>📧 thomas.dubois@ecostrive.fr</span>
                             <span>📱 +33 6 98 76 54 32</span>
                             <span>📍 Paris, France</span>
@@ -124,13 +136,13 @@
                     </div>
                 </div>
 
-                <div class="cv-content">
-                    <section class="cv-section">
+                <div class="contenu-cv">
+                    <section class="section-cv">
                         <h3>Profil</h3>
                         <p>Ingénieur de formation et sportif passionné, j'ai toujours été sensible aux enjeux environnementaux. Mon expertise technique et ma connaissance des matériaux recyclables permettent de développer des produits innovants alliant performance et écologie.</p>
                     </section>
 
-                    <section class="cv-section">
+                    <section class="section-cv">
                         <h3>Formation</h3>
                         <ul>
                             <li><strong>2014-2017 :</strong> Diplôme d'Ingénieur en Matériaux et Environnement - École Centrale Paris</li>
@@ -139,7 +151,7 @@
                         </ul>
                     </section>
 
-                    <section class="cv-section">
+                    <section class="section-cv">
                         <h3>Expérience professionnelle</h3>
                         <ul>
                             <li>
@@ -168,7 +180,7 @@
                         </ul>
                     </section>
 
-                    <section class="cv-section">
+                    <section class="section-cv">
                         <h3>Compétences</h3>
                         <ul>
                             <li>Ingénierie des matériaux</li>
@@ -181,7 +193,82 @@
                     </section>
                 </div>
             </article>
-
+            <article class="bloc-cv" id="cv-3">
+                <div class="entete-cv">
+                    <div class="photo-cv">
+                        <img src="../img/cv-photo2.svg" alt="Photo de Thomas Dubois">
+                    </div>
+                    <div class="infos-cv">
+                        <h2>Thomas Dubois</h2>
+                        <p class="titre-cv">Co-fondateur & Directeur Technique</p>
+                        <p class="contact-cv">
+                            <span>📧 thomas.dubois@ecostrive.fr</span>
+                            <span>📱 +33 6 98 76 54 32</span>
+                            <span>📍 Paris, France</span>
+                        </p>
+                    </div>
+                </div>
+            
+                <div class="contenu-cv">
+                    <section class="section-cv">
+                        <h3>Profil</h3>
+                        <p>Ingénieur de formation et sportif passionné, j'ai toujours été sensible aux enjeux environnementaux. Mon
+                            expertise technique et ma connaissance des matériaux recyclables permettent de développer des produits
+                            innovants alliant performance et écologie.</p>
+                    </section>
+            
+                    <section class="section-cv">
+                        <h3>Formation</h3>
+                        <ul>
+                            <li><strong>2014-2017 :</strong> Diplôme d'Ingénieur en Matériaux et Environnement - École Centrale
+                                Paris</li>
+                            <li><strong>2012-2014 :</strong> Classes Préparatoires aux Grandes Écoles (MPSI/PSI)</li>
+                            <li><strong>2010-2012 :</strong> Baccalauréat Scientifique - Mention Très Bien</li>
+                        </ul>
+                    </section>
+            
+                    <section class="section-cv">
+                        <h3>Expérience professionnelle</h3>
+                        <ul>
+                            <li>
+                                <strong>2020 - Aujourd'hui :</strong> Co-fondateur et Directeur Technique - EcoStrive
+                                <ul>
+                                    <li>Recherche et développement de produits éco-responsables</li>
+                                    <li>Gestion de la chaîne d'approvisionnement</li>
+                                    <li>Relations avec les fournisseurs de matériaux recyclés</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>2017-2020 :</strong> Ingénieur Matériaux - RecyclTech Industries
+                                <ul>
+                                    <li>Développement de matériaux recyclables</li>
+                                    <li>Tests et validation de produits</li>
+                                    <li>Optimisation des processus de production</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>2016 (Stage) :</strong> Stagiaire Ingénieur - Laboratoire de Recherche Matériaux
+                                <ul>
+                                    <li>Étude de matériaux composites recyclables</li>
+                                    <li>Rédaction de rapports techniques</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </section>
+            
+                    <section class="section-cv">
+                        <h3>Compétences</h3>
+                        <ul>
+                            <li>Ingénierie des matériaux</li>
+                            <li>R&D produits</li>
+                            <li>Gestion de production</li>
+                            <li>Qualité et certification</li>
+                            <li>Anglais : Courant (TOEIC 920)</li>
+                            <li>Allemand : Intermédiaire</li>
+                        </ul>
+                    </section>
+                </div>
+            </article>
             <div class="print-notice">
                 <p>💡 <strong>Astuce :</strong> Utilisez la fonction d'impression de votre navigateur (Ctrl+P / Cmd+P) pour imprimer les CVs avec une mise en page optimisée.</p>
             </div>
@@ -206,6 +293,19 @@
             <div class="footer-section">
                 <h3>Suivez-nous</h3>
                 <p>Sur les réseaux sociaux pour nos dernières actualités</p>
+                <div class="liens-sociaux">
+                    <a href="https://www.facebook.com/profile.php?id=61585595369923" aria-label="Facebook" target="_blank">
+                        <img src="../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/ecostrive.off/" aria-label="Instagram" target="_blank">
+                        <img src="../img/logo-instagram.png" alt="Instagram">
+                    <a href="https://x.com/EcoStrive_Off" aria-label="X (Twitter)" target="_blank">
+                        <img src="../img/x.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://www.linkedin.com/company/ecostrive-off/" aria-label="LinkedIn" target="_blank">
+                        <img src="../img/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">

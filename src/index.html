@@ -6,23 +6,24 @@
     <meta name="description" content="EcoStrive - Vente d'équipement sportif recyclable et éco-responsable">
     <title>EcoStrive - Équipement Sportif Recyclable</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="eco-mode.css" id="eco-mode-stylesheet" disabled>
+    <link rel="stylesheet" href="eco-mode.css" id="style-mode-eco" disabled>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <h1>EcoStrive</h1>
+                <a href="#"><img src="../img/logoSite.png" alt="Logo EcoStrive"></a>
+                <a href="#"><h1>EcoStrive</h1></a>
             </div>
-            <ul class="nav-menu">
+            <ul class="menu-principal">
                 <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="#produits">Produits</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="cv.html">Équipe</a></li>
                 <li><a href="plan-du-site.html">Plan du site</a></li>
             </ul>
-            <button id="eco-mode-toggle" class="eco-toggle" aria-label="Activer le mode éco-responsable">🌱</button>
-            <button class="menu-toggle" aria-label="Menu mobile" aria-expanded="false">
+            <button id="bouton-mode-eco" class="bouton-eco" aria-label="Activer le mode éco-responsable">🌱</button>
+            <button class="bouton-menu" aria-label="Menu mobile" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -31,63 +32,68 @@
     </header>
 
     <main>
-        <section class="hero">
-            <div class="hero-content">
+        <section class="banniere">
+            <div class="texte-banniere">
                 <h2>Sport & Écologie, unis pour la planète</h2>
                 <p>Découvrez notre sélection d'équipements sportifs recyclables et éco-responsables</p>
                 <a href="#produits" class="btn-primary">Découvrir nos produits</a>
             </div>
         </section>
 
-        <section id="produits" class="produits">
+        <section id="produits" class="section-produits">
             <h2>Nos Produits</h2>
-            <div class="produits-grid">
-                <article class="produit-card">
-                    <img src="../img/produit1.svg" alt="Vêtements sportifs recyclés" loading="lazy">
-                    <h3>Vêtements Sportifs Recyclés</h3>
-                    <p>Collection de vêtements de sport fabriqués à partir de matériaux recyclés (bouteilles plastiques, textiles usagés).</p>
-                    <span class="prix">À partir de 29,90€</span>
+            <div class="grille-produits">
+                <article class="carte-produit">
+                    <img src="../img/placheDeSurf.jpg" alt="Planches de surf recyclés" loading="lazy">
+                    <h3>Planches De Surf</h3>
+                    <p>Composé de matériaux biosourcés cette planche de surf vous permettra de surfer tout en respectant l’environnement
+                    laissant ainsi intacte votre spot pour un prochain séjour</p>
+                    <span class="prix">À partir de 289,90€</span>
                     <button class="btn-secondary">Voir le produit</button>
                 </article>
-                <article class="produit-card">
-                    <img src="../img/produit2.svg" alt="Chaussures de sport écologiques" loading="lazy">
-                    <h3>Chaussures Écologiques</h3>
-                    <p>Chaussures de sport conçues avec des matériaux durables et recyclables, pour un impact environnemental réduit.</p>
+                <article class="carte-produit">
+                    <img src="../img/running.png" alt="Chaussures de sport écologiques" loading="lazy">
+                    <h3>Chaussures de Running</h3>
+                    <p>avec notre nouvelle gamme de chaussures de running vous ne vous passerez plus de la course à pied avec ça semelle tout
+                    confort et sa forme adaptative à vos pieds vous ne ferez plus qu’un avec vos chaussures tout en respectant
+                    l’environnement</p>
                     <span class="prix">À partir de 79,90€</span>
                     <button class="btn-secondary">Voir le produit</button>
                 </article>
-                <article class="produit-card">
-                    <img src="../img/produit3.svg" alt="Accessoires sportifs recyclables" loading="lazy">
-                    <h3>Accessoires Recyclables</h3>
-                    <p>Gourdes, sacs à dos et autres accessoires sportifs fabriqués à partir de matériaux recyclés et recyclables.</p>
-                    <span class="prix">À partir de 19,90€</span>
+                <article class="carte-produit">
+                    <img src="../img/maillotDeBasket.jpg" alt="maillots sportifs recyclables" loading="lazy">
+                    <h3>Maillot de Basket : "Wind"</h3>
+                    <p>maillot de basket aéré et anti-transpirant pour enchainer les Games. Nous vous présentons notre gamme “Wind” de maillot
+                    de basket respirant et 100% recyclable.</p>
+                    <span class="prix">À partir de 59,90€</span>
                     <button class="btn-secondary">Voir le produit</button>
                 </article>
-                <article class="produit-card">
-                    <img src="../img/produit4.svg" alt="Équipement de fitness durable" loading="lazy">
-                    <h3>Équipement Fitness Durable</h3>
-                    <p>Matériel de fitness conçu pour durer, fabriqué avec des matériaux recyclables et respectueux de l'environnement.</p>
-                    <span class="prix">À partir de 49,90€</span>
+                <article class="carte-produit">
+                    <img src="../img/maillotDeFoot.png" alt="maillot sportifs reecyclables" loading="lazy">
+                    <h3>Maillot de Football : “Wind”</h3>
+                    <p>maillot de football aéré et anti-transpirant pour enchainer les matchs. Nous vous présentons notre gamme “Wind” de
+                    maillot de foot respirant et 100% recyclable.</p>
+                    <span class="prix">À partir de 69,90€</span>
                     <button class="btn-secondary">Voir le produit</button>
                 </article>
             </div>
         </section>
 
-        <section id="valeurs" class="valeurs">
+        <section id="valeurs" class="section-valeurs">
             <h2>Nos Valeurs</h2>
-            <div class="valeurs-grid">
-                <div class="valeur-item">
-                    <div class="valeur-icon">♻️</div>
+            <div class="grille-valeurs">
+                <div class="bloc-valeur">
+                    <div class="icone-valeur">♻️</div>
                     <h3>Recyclage</h3>
                     <p>100% de nos produits sont recyclables ou fabriqués à partir de matériaux recyclés</p>
                 </div>
-                <div class="valeur-item">
-                    <div class="valeur-icon">🌍</div>
+                <div class="bloc-valeur">
+                    <div class="icone-valeur">🌍</div>
                     <h3>Écologie</h3>
                     <p>Engagement pour la protection de l'environnement et la réduction de notre empreinte carbone</p>
                 </div>
-                <div class="valeur-item">
-                    <div class="valeur-icon">🏃</div>
+                <div class="bloc-valeur">
+                    <div class="icone-valeur">🏃</div>
                     <h3>Performance</h3>
                     <p>Des équipements de qualité qui allient performance sportive et respect de l'environnement</p>
                 </div>
@@ -113,6 +119,19 @@
             <div class="footer-section">
                 <h3>Suivez-nous</h3>
                 <p>Sur les réseaux sociaux pour nos dernières actualités</p>
+                <div class="liens-sociaux">
+                    <a href="https://www.facebook.com/profile.php?id=61585595369923" aria-label="Facebook" target="_blank">
+                        <img src="../img/facebook.png" alt="Facebook">
+                    </a>
+                    <a href="https://www.instagram.com/ecostrive.off/" aria-label="Instagram" target="_blank">
+                        <img src="../img/logo-instagram.png" alt="Instagram">
+                    <a href="https://x.com/EcoStrive_Off" aria-label="X (Twitter)" target="_blank">
+                        <img src="../img/x.png" alt="X (Twitter)">
+                    </a>
+                    <a href="https://www.linkedin.com/company/ecostrive-off/" aria-label="LinkedIn" target="_blank">
+                        <img src="../img/linkedin.png" alt="LinkedIn">
+                    </a>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
