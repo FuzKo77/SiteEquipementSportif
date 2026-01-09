@@ -21,6 +21,7 @@ SAE_DEV1.2/
     ├── mentions-legales.html # Mentions légales
     ├── plan-du-site.html    # Plan du site
     ├── cv.html              # CVs des créateurs (imprimables)
+    ├── faq.html             # Page de FAQ style accordéon
     ├── style.css            # Feuille de style principale
     ├── eco-mode.css         # Styles pour le mode éco-responsable
     ├── print.css            # Styles pour l'impression des CVs
