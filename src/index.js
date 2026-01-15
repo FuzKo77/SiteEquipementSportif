@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!ok) return;
 
-      // Sauvegarde simple dans localStorage
+      // Sauvegarde dans localStorage
       const data = {
         nom: nom.value.trim(),
         prenom: prenom.value.trim(),
@@ -157,6 +157,50 @@ document.addEventListener("DOMContentLoaded", () => {
   if (printBtn) {
     printBtn.addEventListener("click", () => window.print());
   }
+
+  // ----- Impression individuelle des CV -----
+  const printCvButtons = document.querySelectorAll(".btn-print-cv");
+  printCvButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const cvId = btn.getAttribute("data-cv-id");
+      const allCvs = document.querySelectorAll(".bloc-cv");
+      
+      // Masquer tous les CV sauf celui à imprimer
+      allCvs.forEach((cv) => {
+        if (cv.id === cvId) {
+          cv.classList.remove("hidden-print");
+        } else {
+          cv.classList.add("hidden-print");
+        }
+      });
+      
+      // Masquer les autres éléments
+      const header = document.querySelector("header");
+      const footer = document.querySelector("footer");
+      const printActions = document.querySelector(".print-actions");
+      const teamIntro = document.querySelector(".team-intro");
+      const printNotice = document.querySelector(".print-notice");
+      
+      if (header) header.style.display = "none";
+      if (footer) footer.style.display = "none";
+      if (printActions) printActions.style.display = "none";
+      if (teamIntro) teamIntro.style.display = "none";
+      if (printNotice) printNotice.style.display = "none";
+      
+      // Lancer l'impression
+      window.print();
+      
+      // Restaurer l'affichage après l'impression
+      setTimeout(() => {
+        allCvs.forEach((cv) => cv.classList.remove("hidden-print"));
+        if (header) header.style.display = "";
+        if (footer) footer.style.display = "";
+        if (printActions) printActions.style.display = "";
+        if (teamIntro) teamIntro.style.display = "";
+        if (printNotice) printNotice.style.display = "";
+      }, 100);
+    });
+  });
 
   // ----- FAQ Accordéon -----
   const faqQuestions = document.querySelectorAll(".faq-question");
