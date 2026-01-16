@@ -594,6 +594,12 @@ footer {
     color: #81C784;
 }
 
+.footer-section img {
+    margin-top: 50px;
+    height: 5rem;
+    width: auto;
+}
+
 .footer-section ul li {
     margin-bottom: 0.5rem;
 }
