@@ -33,11 +33,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Prepare website
+        run: |
+          mkdir -p _site/img
+          cp -R src/. _site/
+          cp -R img/. _site/img/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Keep src and img as sibling directories for the relative links.
-          path: './'
+          path: './_site'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
