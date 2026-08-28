@@ -1,5 +1,7 @@
 # EcoStrive - Site de vente d'équipement sportif recyclable
 
+[Afficher le site](https://fuzko77.github.io/SiteEquipementSportif/src/index.html)
+
 ## Description
 
 Site web éco-responsable pour la vente d'équipement sportif recyclable. Le site respecte les exigences du RGESN (Référentiel Général d'Éco-conception de Services Numériques) et propose un mode éco-responsable pour réduire la consommation d'énergie.
