@@ -38,6 +38,7 @@ jobs:
           mkdir -p _site/img
           cp -R src/. _site/
           cp -R img/. _site/img/
+          sed -i 's#\.\./img/#img/#g' _site/*.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
